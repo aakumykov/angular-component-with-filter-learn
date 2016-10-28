@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app='MyApp' ng-controller='MyCtrl as ctrl' strict-di>
+	<head>
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; media-src *;">
+		<meta charset='UTF-8'/>
+		<title>{{ctrl.name}}</title>
+		<script type='text/javascript' src='lib/angular-1.5.8.js'></script>
+		<script type='text/javascript' src='index.js'></script>
+	</head>
+	<body>
+		<h2>{{ctrl.name}}</h2>
+		<label>Переворот:<br>
+			<input ng-model='ctrl.string1'> &ndash; <span>{{ ctrl.string1 | reverse }}</span>
+		</label>
+	</body>
+</html>
