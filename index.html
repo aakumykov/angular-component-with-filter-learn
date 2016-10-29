@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html ng-app='MyApp' ng-controller='MyCtrl as ctrl' strict-di>
+<html ng-app='MyApp' ng-controller='MyCtrl' strict-di>
 	<head>
 		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; media-src *;">
 		<meta charset='UTF-8'/>
-		<title>{{ctrl.name}}</title>
+		<title>AngularJS filters</title>
 		<script type='text/javascript' src='lib/angular-1.5.8.js'></script>
 		<script type='text/javascript' src='index.js'></script>
 	</head>
 	<body>
-		<h2>{{ctrl.name}}</h2>
 		<reverse-area></reverse-area>
 	</body>
 </html>

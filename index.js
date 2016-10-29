@@ -4,6 +4,7 @@ var app = angular.module('MyApp',[]);
 
 app.filter('reverse', function(){
 	return function(str){
+		if (!str) return '';
 		var newStr = '';
 		for (var i=(str.length-1); i>=0; i--) {
 			newStr += str[i];
@@ -12,22 +13,23 @@ app.filter('reverse', function(){
 	}
 });
 
-app.controller('MyCtrl', ['reverseFilter', function(reverseFilter){
+app.controller('MyCtrl', function(){
 	this.name = 'Фильтры';
-	this.string1 = '';
-}]);
+});
 
 app.component('reverseArea', {
 	template: `
-		<div>Переворот</div>
-		<ul>
-			<li>name: {{ ctrl2.name }}</li>
-			<li>reversedName: {{ ctrl2.reversedName }}</li>
-		</ul>
+		<fieldset>
+			<legend>Область переворота</legend>
+			<lebel>Напишите слово:<br>
+			<input type='text' ng-model="ctrl2.directWord">
+			<p><b>{{ ctrl2.directWord | reverse }}</b></p>
+		</fieldset>
 	`,
 	controller: ['reverseFilter', function(reverseFilter){
-		this.name = 'внутренний контроллер reverseArea';
-		this.reversedName = reverseFilter(this.name);
+		//this.directWord;
+		this.directWord = '123';
+		//this.reversedWord = reverseFilter(this.directWord);
 	}],
 	controllerAs: 'ctrl2',
 });
