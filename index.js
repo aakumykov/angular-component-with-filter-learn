@@ -20,16 +20,16 @@ app.controller('MyCtrl', function(){
 app.component('reverseArea', {
 	template: `
 		<fieldset>
-			<legend>Область переворота</legend>
-			<lebel>Напишите слово:<br>
+			<legend>Reversing area</legend>
+			<lebel>Enter some text:<br>
 			<input type='text' ng-model="ctrl2.directWord">
 			<p><b>{{ ctrl2.directWord | reverse }}</b></p>
 		</fieldset>
 	`,
-	controller: ['reverseFilter', function(reverseFilter){
+	controller: function(){
 		//this.directWord;
 		this.directWord = '123';
 		//this.reversedWord = reverseFilter(this.directWord);
-	}],
+	},
 	controllerAs: 'ctrl2',
 });
