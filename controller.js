@@ -2,5 +2,6 @@
 
 angular.module('MyApp').
 controller('MyCtrl', function(){
-	this.title = 'AngularJS filters';
+	this.title = 'AngularJS component and filter';
+	this.heading = 'Компонент с контроллером, определённым «внутри».';
 });
