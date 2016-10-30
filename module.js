@@ -1,3 +1,5 @@
 'use strict';
 
-angular.module('MyApp',[]);
+angular.module('MyApp',[
+	'ReverseArea'
+]);
