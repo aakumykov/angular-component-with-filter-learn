@@ -10,11 +10,6 @@ app.filter('reverse', function(){
 	}
 });
 
-function ReverseFilterController(reverseFilter){
-	this.directWord = '12345';
-	this.reversedWord = reverseFilter(this.directWord);
-}
-
 app.component('reverseArea', {
 	template: `
 		<fieldset>
@@ -23,6 +18,9 @@ app.component('reverseArea', {
 			<p>reversed word: <i>{{ ctrl.reversedWord }}</i></p>
 		</fieldset>
 	`,
-	controller: ReverseFilterController,
+	controller: ['reverseFilter', function(reverseFilter){
+		this.directWord = '12345';
+		this.reversedWord = reverseFilter(this.directWord);
+	}],
 	controllerAs: 'ctrl',
 });
